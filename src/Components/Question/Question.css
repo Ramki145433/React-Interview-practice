@@ -1,0 +1,26 @@
+.card {
+    border: 1px solid;
+    border-radius: 0.5rem;
+    width: 280px;
+    height: 450px;
+    margin-bottom: 1rem;
+    margin-right: 1.25rem;
+}
+
+ul {
+    /* display : grid;
+    grid-template-columns: repeat(3, 1fr); */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination > span {
+    border: 1px solid;
+    cursor: pointer;
+    padding: 0.5rem;
+}
