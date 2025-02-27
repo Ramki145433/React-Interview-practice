@@ -26,6 +26,9 @@ export default function Chess({BoardSize = 8}) {
         setSelectedPosition(getBishopMoves(r,c))
         // console.log(selectedPosition)
     }
+    const handleLeave = () => {
+        setSelectedPosition(null)
+    }
     return <>
     <div>
         <h1>Chess Board</h1>
@@ -41,8 +44,11 @@ export default function Chess({BoardSize = 8}) {
                                 
                                 <div className= {`chess_col ${color}`} key={colIndex} 
                                 style={{cursor:"pointer", "backgroundColor" : isMoveHighlightned ? "red" : null}} 
-                                onClick={() => handleClick(rowIndex,colIndex)}>
-                                    
+                                // onClick={() => handleClick(rowIndex,colIndex)}
+                                // Hovered feature
+                                onMouseEnter={() => handleClick(rowIndex, colIndex)}
+                                onMouseLeave={handleLeave}>
+                                
                                 </div>
                             )
                         )
