@@ -1,0 +1,27 @@
+.drag-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: lightyellow;
+    position: relative;
+    border: 1px solid blue;
+    overflow: hidden;
+}
+
+.draggable{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: grab;
+    user-select: none;
+}
+
+.draggable:active{
+    cursor: grabbing;
+}
