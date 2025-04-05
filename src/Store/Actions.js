@@ -17,3 +17,7 @@ export function updateMobile(mobile) {
 export function reset() {
     return {"type" : "reset"}
 }
+
+export function addTransaction(id, amount, type, date) {
+    return {"type" : "ADD_TRANSACTION", "payload" : {"id" : id, "amount" : amount, "type" : type, "date" : date}}
+}

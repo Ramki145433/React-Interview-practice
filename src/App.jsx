@@ -13,12 +13,12 @@ import Checkbox from "./Components/Checkboxes/Checkbox"
 import Layout from "./Components/Layout/Layout"
 import Sidebar from "./Components/Sidebar/Sidebar"
 import Account from "./Store/Account"
+import Thunk from "./Store/Thunk"
 import Form from "./Store/Form"
 export default function App() {
   return (
     <div>
-     <Form />
-     <Account />
+     <Thunk />
     </div>
   )
 }

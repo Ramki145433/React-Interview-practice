@@ -1,12 +1,13 @@
 import React, {useState } from 'react'
 import { useDispatch } from 'react-redux'
 import "./Store.css"
-import { deposit, withdraw, updateName, updateMobile, reset } from './Actions.js'
+import { deposit, withdraw, updateName, updateMobile, reset, addTransaction } from './Actions.js'
 
 const Form = () => {
     const [amount, setAmount] =  useState("")
     const [name, setName] = useState("")
     const [mobile, setMobile] = useState("")
+    const [transId, setTransId] = useState(1)
     let dispatch = useDispatch();
   return (
     <div style={{padding : "2rem"}}>
@@ -14,11 +15,15 @@ const Form = () => {
         <input type="number" placeholder='Enter Amount' 
         value={amount} onChange={(e) => setAmount(e.target.value)}/>
         <button onClick={() => {
+            setTransId(transId + 1)
             dispatch(deposit(amount));
+            dispatch(addTransaction(transId, amount, "credit", new Date()))
             setAmount("")
         }} >Deposit</button>
         <button onClick={() => {
+            setTransId(transId + 1)
             dispatch(withdraw(amount));
+            dispatch(addTransaction(transId, amount, "debit", new Date()))
             setAmount("")
         }}>Withdraw</button>
       </div>

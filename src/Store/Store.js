@@ -1,4 +1,5 @@
-import {createStore} from "redux"
+import {combineReducers, createStore, applyMiddleware} from "redux"
+import {thunk} from "redux-thunk"
 
 let initialState = {
     balance : 0,
@@ -6,7 +7,7 @@ let initialState = {
     name : ""
 }
 
-function reducer(state = initialState, action) {
+function accountReducer(state = initialState, action) {
     switch (action.type) {
         case "Deposit":
             return {...state, "balance" : state.balance + parseInt(action.payload)}
@@ -23,7 +24,32 @@ function reducer(state = initialState, action) {
     }
 }
 
-let store = createStore(reducer)
+function transactionReducer (state = [], action) {
+    switch (action.type) {
+        case "ADD_TRANSACTION" :
+            return ([...state, {id : action.payload.id, amount : action.payload.amount,
+                 type : action.payload.type, date : action.payload.date}])
+        default:
+            return state
+    }
+}
+
+function middlewareReducer (state = {}, action) {
+    switch (action.type) {
+        case "middleware" :
+            return {...state, id : action.payload.id, body : action.payload.body, title : action.payload.title}
+        default:
+            return state
+    }
+}
+
+let rootReducer = combineReducers({
+    account : accountReducer,
+    transaction : transactionReducer,
+    middleware : middlewareReducer
+})
+
+let store = createStore(rootReducer, applyMiddleware(thunk))
 
 // console.log(store.getState())
 // store.dispatch({type : "Deposit", payload : 1000})
