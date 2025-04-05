@@ -8,10 +8,17 @@ import DragAndDrop from "./Components/DragAndDrop/DragAndDrop"
 import DndSample from "./Components/DNDSample/DndSample"
 import UseReducer from "./Components/UseReducer/UseReducer"
 import Dropdown from "./Components/Dropdown/Dropdown"
+import Section1 from "./Components/Section/Section1"
+import Checkbox from "./Components/Checkboxes/Checkbox"
+import Layout from "./Components/Layout/Layout"
+import Sidebar from "./Components/Sidebar/Sidebar"
+import Account from "./Store/Account"
+import Form from "./Store/Form"
 export default function App() {
   return (
     <div>
-      <Dropdown />
+     <Form />
+     <Account />
     </div>
   )
 }
