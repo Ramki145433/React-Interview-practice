@@ -1,6 +1,7 @@
-import React, { use, useState } from 'react'
+import React, {useState } from 'react'
 import { useDispatch } from 'react-redux'
 import "./Store.css"
+import { deposit, withdraw, updateName, updateMobile, reset } from './Actions.js'
 
 const Form = () => {
     const [amount, setAmount] =  useState("")
@@ -13,11 +14,11 @@ const Form = () => {
         <input type="number" placeholder='Enter Amount' 
         value={amount} onChange={(e) => setAmount(e.target.value)}/>
         <button onClick={() => {
-            dispatch({"type" : "Deposit", "payload" : amount});
+            dispatch(deposit(amount));
             setAmount("")
         }} >Deposit</button>
         <button onClick={() => {
-            dispatch({"type" : "Withdraw", "payload" : amount});
+            dispatch(withdraw(amount));
             setAmount("")
         }}>Withdraw</button>
       </div>
@@ -25,7 +26,7 @@ const Form = () => {
       <div className="name">
         <input type="text" placeholder='Enter Name' onChange={(e) => setName(e.target.value)} value={name}/>
         <button onClick={() => {
-            dispatch({"type" : "updateName", "payload" : name});
+            dispatch(updateName(name));
             setName("")
         }}>Add Name</button>
       </div>
@@ -33,12 +34,12 @@ const Form = () => {
       <div className="mobile">
         <input type="tel" placeholder='Enter Mobile Number' onChange={(e) => setMobile(e.target.value)} value={mobile}/>
         <button onClick={() => {
-            dispatch({"type" : "updateMobile", "payload" : mobile});
+            dispatch(updateMobile(mobile));
             setMobile("")
         }}>Add Mobile</button>
       </div>
 
-      <div><button onClick={() => {dispatch({"type" : "reset"})}}>Reset</button></div>
+      <div><button onClick={() => dispatch(reset())}>Reset</button></div>
     </div>
   )
 }
