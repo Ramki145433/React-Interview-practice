@@ -1,0 +1,12 @@
+.container{  
+    height: 100vh;
+}
+
+.makeCircle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid;
+    margin-bottom: 10px;
+}
