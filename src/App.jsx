@@ -1,9 +1,11 @@
 import "./Components/Question/Question"
-import GenarateCircle from "./Components/UseReducer/GenarateCircle"
+import Otp from "./Components/Otp/Otp"
+import TodoList from "./Components/TodoList/TodoList"
 export default function App() {
   return (
     <div>
-     <GenarateCircle />
+      {/* <Otp onSubmit={otp => console.log(otp)}/> */}
+      <TodoList />
     </div>
   )
 }
