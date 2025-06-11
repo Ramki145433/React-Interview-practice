@@ -1,0 +1,55 @@
+.cart-holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    /* border: 2px solid red; */
+    h1{
+        font-family: "Roboto";
+        font-size: 24px;
+    }
+}
+
+.cart-container{
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-list{
+    width: 50%;
+    /* border: 1px solid; */
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+        font-family: "Roboto";
+        font-size: 24px;
+    }
+    button{
+        padding: 16px;
+        background-color: rgb(125, 103, 146);
+        border-radius: 8px;
+        border-style: none;
+        cursor: pointer;
+        color: white;
+        font-weight: 600;
+    }
+}
+
+.clear{
+    padding: 16px;
+        background-color: rgb(125, 103, 146);
+        border-radius: 8px;
+        border-style: none;
+        cursor: pointer;
+        color: white;
+        font-weight: 600;
+}
+
