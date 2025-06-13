@@ -1,0 +1,28 @@
+.faq-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    h1{
+        color: blueviolet;
+        font-family: "Roboto";
+        font-size: 2.5rem;
+    }
+}
+
+.faq{
+    /* border: 1px solid; */
+    min-width: 300px;
+    margin-bottom: 8px;
+    .question{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(235, 232, 232);
+        span{
+            padding-right: 16px;
+        }
+    }
+}
